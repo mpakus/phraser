@@ -1,8 +1,6 @@
 # Phraser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/phraser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Phraser is a gem that generates unique phrases to use in your app as password, url and tokens
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Generate array of strings:
+``` ruby
+TokenPhrase.generate([prefix: proc{}, postfix: proc{}])
+> ['red', 'massive', 'elephant']
+```
+
+Generate completely string:
+```
+TokenPhrase.generate_string([separator: '-', prefix: proc{}, postfix: proc{}])
+> "1792123-red-massive-elephant-68912223"
+```
 
 ## Development
 
@@ -32,7 +40,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/phraser. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mpakus/phraser. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -41,3 +49,5 @@ The gem is available as open source under the terms of the [MIT License](http://
 ## Code of Conduct
 
 Everyone interacting in the Phraser project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/phraser/blob/master/CODE_OF_CONDUCT.md).
+
+[![CircleCI](https://circleci.com/gh/mpakus/phraser.svg?style=svg)](https://circleci.com/gh/mpakus/phraser)
