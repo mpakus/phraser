@@ -20,22 +20,40 @@ Or install it yourself as:
 
 ## Usage
 
-Generate array of strings:
-``` ruby
-TokenPhrase.generate([prefix: proc{}, postfix: proc{}])
-> ['red', 'massive', 'elephant']
+Full 
+```ruby
+Phraser.generate(prefix: proc{ Time.now.to_i }, postfix: "the-end")
+Phraser.generate_string(separator: '*', prefix: proc{ Time.now.to_i }, postfix: "the-end")
 ```
 
-Generate completely string:
+All parameters are optional (just use named arguments):
+
+- `separator` is "-" by default but if you would like a different separator, just pass a string
+- `prefix` String or Proc going to be 1st element in the resulted array or string
+- `postfix` String or Proc will be last element in the resulted array or string
+
+### Examples
+
+Generate array:
+```ruby
+Phraser.generate
+> ["marked", "purple", "joke", "on", "presence"]
 ```
-TokenPhrase.generate_string([separator: '-', prefix: proc{}, postfix: proc{}])
-> "1792123-red-massive-elephant-68912223"
+
+Generate string:
+```ruby
+Phraser.generate_string
+> 'convinced-brown-hop-at-South"
 ```
-```
-prefix = proc{ 'begin' }
-postfix = proc{ 'end' }
-TokenPhrase.generate_string(prefix: prefix, postfix: postfix)
-> "begin-red-massive-elephant-end"
+
+Different separator, prefix is Timestamp and 'the-end' string added to the end of the string
+```ruby
+separator = '*'
+prefix = proc{ Time.now.to_i }
+postfix = "the-end"
+Phraser.generate_string(separator: separator, prefix: prefix, postfix: postfix)
+> "1496842603*red*massive*elephant*the-end"
+
 ```
 
 ## Development
@@ -54,6 +72,6 @@ The gem is available as open source under the terms of the [MIT License](http://
 
 ## Code of Conduct
 
-Everyone interacting in the Phraser project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/phraser/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Phraser project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/mpakus/phraser/blob/master/CODE_OF_CONDUCT.md).
 
 [![CircleCI](https://circleci.com/gh/mpakus/phraser.svg?style=svg)](https://circleci.com/gh/mpakus/phraser)

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Renat Ibragimov']
   spec.email         = ['mrak69@gmail.com']
 
-  spec.summary       = 'Generate random phrases'
+  spec.summary       = 'Generate random phrases and tokens'
   spec.description   = 'Phraser is a gem that generates unique phrases to use in your app as password, url and tokens'
   spec.homepage      = 'https://github.com/mpakus/phraser'
   spec.license       = 'MIT'

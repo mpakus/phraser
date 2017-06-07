@@ -5,8 +5,8 @@ RSpec.describe Phraser do
   let!(:postfix) { 'postfix' }
   let!(:separator) { '**|**' }
 
-  let!(:proc_prefix){ proc{'prefix'} }
-  let!(:proc_postfix){ proc{'postfix'} }
+  let!(:proc_prefix) { proc { 'prefix' } }
+  let!(:proc_postfix) { proc { 'postfix' } }
 
   context 'with .generate' do
     it { expect(Phraser.generate).to be_kind_of Array }
