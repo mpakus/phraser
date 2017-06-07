@@ -31,6 +31,12 @@ Generate completely string:
 TokenPhrase.generate_string([separator: '-', prefix: proc{}, postfix: proc{}])
 > "1792123-red-massive-elephant-68912223"
 ```
+```
+prefix = proc{ 'begin' }
+postfix = proc{ 'end' }
+TokenPhrase.generate_string(prefix: prefix, postfix: postfix)
+> "begin-red-massive-elephant-end"
+```
 
 ## Development
 
